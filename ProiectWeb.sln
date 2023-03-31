@@ -4,8 +4,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectWeb", "ProiectWeb\ProiectWeb.csproj", "{899EDDBC-0D00-4AC5-A7B0-0B7C02678467}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6249529-5F5C-40C8-8443-3F329F96939E} = {C6249529-5F5C-40C8-8443-3F329F96939E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectWebService", "ProiectWebService\ProiectWebService.csproj", "{C6249529-5F5C-40C8-8443-3F329F96939E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{034FB670-BCB7-41F0-8197-8E0C7EC76C0F} = {034FB670-BCB7-41F0-8197-8E0C7EC76C0F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProiectWebData", "ProiectWebData\ProiectWebData.csproj", "{034FB670-BCB7-41F0-8197-8E0C7EC76C0F}"
 EndProject
