@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProiectWebService.Services
+namespace ProiectWebService.Dtos
 {
     public class ItemsDto
     {
@@ -18,11 +18,11 @@ namespace ProiectWebService.Services
 
         public float Price { get; set; }
 
-        public byte[] ThumbNail { get; set; }
+        public byte[]? ThumbNail { get; set; }
 
-        public byte Image { get; set; }
+        public byte[]? Image { get; set; }
 
-        public DateTime DateOfCreation { get; set; } = DateTime.Now;
+        public DateTime? DateOfCreation { get; set; } = DateTime.Now;
 
         public bool IsPromoted { get; set; }
 

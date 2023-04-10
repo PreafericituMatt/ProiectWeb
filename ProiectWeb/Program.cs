@@ -1,13 +1,26 @@
+using Microsoft.EntityFrameworkCore;
+using ProiectWebData;
+using ProiectWebData.Repositories.Implementation;
+using ProiectWebData.Repositories.Interface;
+using ProiectWebService.Services.Implementations;
+using ProiectWebService.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<DataContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+builder.Services.AddScoped<IItemService,ItemService>();
+builder.Services.AddScoped<IItemsRepository,ItemsRepository>();
 
 var app = builder.Build();
 

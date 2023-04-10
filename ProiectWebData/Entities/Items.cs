@@ -20,11 +20,11 @@ namespace ProiectWebData.Entities
 
         public float Price { get; set; }   
 
-        public byte[] ThumbNail { get; set; }
+        public byte[]? ThumbNail { get; set; }
 
-        public byte Image { get; set; } 
+        public byte[]? Image { get; set; } 
 
-        public DateTime DateOfCreation { get; set; } = DateTime.Now;    
+        public DateTime? DateOfCreation { get; set; } = DateTime.Now;    
 
         public bool IsPromoted { get; set; }
 
