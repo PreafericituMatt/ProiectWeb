@@ -10,5 +10,7 @@ namespace ProiectWebService.Services.Interfaces
     public interface IItemService
     {
         Task<ServiceResponse<List<ItemsDto>>> GetAllItems();
+        Task<ServiceResponse<List<ItemsDto>>> GetPopular();
+        Task<ServiceResponse<List<ItemsDto>>> GetPromoted();
     }
 }

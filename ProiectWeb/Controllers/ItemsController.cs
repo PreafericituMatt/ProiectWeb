@@ -16,7 +16,19 @@ namespace ProiectWeb.Controllers
         }
 
         [HttpGet("GetAll")]
-        public async Task<ActionResult<ServiceResponse<List<ItemsDto>>>> GetAllItems()
+        public async Task<ActionResult<ServiceResponse<List<ItemsDto>>>> GetAll()
+        {
+            return Ok(await _itemService.GetAllItems());
+        }
+
+        [HttpGet("GetPopular")]
+        public async Task<ActionResult<ServiceResponse<List<ItemsDto>>>> GetPopular()
+        {
+            return Ok(await _itemService.GetAllItems());
+        }
+
+        [HttpGet("GetPromoted")]
+        public async Task<ActionResult<ServiceResponse<List<ItemsDto>>>> GetPromoted()
         {
             return Ok(await _itemService.GetAllItems());
         }

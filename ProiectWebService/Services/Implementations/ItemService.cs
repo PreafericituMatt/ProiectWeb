@@ -38,5 +38,39 @@ namespace ProiectWebService.Services.Implementations
 
             return response;
         }
+
+        public async Task<ServiceResponse<List<ItemsDto>>> GetPopular()
+        {
+            var response = new ServiceResponse<List<ItemsDto>>();
+            var result = await _itemsRepository.GetPopular();
+            if (result.Success)
+            {
+                response.Data = _mapper.Map<List<Items>, List<ItemsDto>>(result.Data);
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "Bad Request";
+            }
+
+            return response;
+        }
+
+        public async Task<ServiceResponse<List<ItemsDto>>> GetPromoted()
+        {
+            var response = new ServiceResponse<List<ItemsDto>>();
+            var result = await _itemsRepository.GetPromoted();
+            if (result.Success)
+            {
+                response.Data = _mapper.Map<List<Items>, List<ItemsDto>>(result.Data);
+            }
+            else
+            {
+                response.Success = false;
+                response.Message = "Bad Request";
+            }
+
+            return response;
+        }
     }
 }
