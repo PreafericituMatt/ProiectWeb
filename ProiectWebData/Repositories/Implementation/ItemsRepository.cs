@@ -5,7 +5,7 @@ using ProiectWebData.Repositories.Interface;
 
 namespace ProiectWebData.Repositories.Implementation
 {
-    public class ItemsRepository : IItemsRepository
+    public class ItemsRepository : IItemRepository
     {
         private readonly DataContext _dbContext;
 
@@ -19,6 +19,22 @@ namespace ProiectWebData.Repositories.Implementation
             return new ServiceResponse<List<Items>>
             {
                 Data = await _dbContext.Items.ToListAsync()
+            };
+        }
+
+        public async Task<ServiceResponse<List<Items>>> GetPopular()
+        {
+            return new ServiceResponse<List<Items>>
+            {
+                Data = await _dbContext.Items.Where(i => i.IsPopular == true).ToListAsync()
+            };
+        }
+
+        public async Task<ServiceResponse<List<Items>>> GetPromoted()
+        {
+            return new ServiceResponse<List<Items>>
+            {
+                Data = await _dbContext.Items.Where(i => i.IsPromoted == true).ToListAsync()
             };
         }
     }

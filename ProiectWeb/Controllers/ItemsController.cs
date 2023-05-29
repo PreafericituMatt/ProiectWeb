@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ProiectWebService;
 using ProiectWebService.Dtos;
@@ -7,6 +8,7 @@ using ProiectWebService.Services.Interfaces;
 namespace ProiectWeb.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     public class ItemsController : Controller
     {
         private readonly IItemService _itemService;

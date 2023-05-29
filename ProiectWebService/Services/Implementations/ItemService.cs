@@ -14,9 +14,9 @@ namespace ProiectWebService.Services.Implementations
     public class ItemService : IItemService
     {
         private readonly IMapper _mapper;
-        private readonly IItemsRepository _itemsRepository;
+        private readonly IItemRepository _itemsRepository;
 
-        public ItemService(IMapper mapper, IItemsRepository itemsRepository)
+        public ItemService(IMapper mapper, IItemRepository itemsRepository)
         {
             _mapper = mapper;
             _itemsRepository = itemsRepository;
